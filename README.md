@@ -6,7 +6,7 @@ A simple widget for showing dismissible help texts to the user.
 
 ### Import the package
 
-To use this package, [add hints as a dependency]() in your pubspec.yaml
+To use this package, [add hints as a dependency](https://pub.dev/packages/hints#-installing-tab-) in your pubspec.yaml
 
 ### Use the package
 
