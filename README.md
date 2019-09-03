@@ -22,6 +22,6 @@ Note: The widget will assert if no key is provided. Don't provide a generated ke
 
 ## Getting started
 
-Please look at the example code for getting started.
+Please look at the [example code](example/lib/main.dart) for getting started.
 
 ![Screenshot](/screenshot.png?raw=true "Hints in action")
