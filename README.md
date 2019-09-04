@@ -1,6 +1,6 @@
 # hints
 
-A simple widget for showing dismissible help texts to the user.
+A simple widget for showing dismissible help texts to the user. If the widget is dismissed, it will remember by saving the state in persistent storage and will never be shown again.
 
 ## Usage
 
