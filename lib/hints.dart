@@ -11,6 +11,8 @@ class HintCard extends StatefulWidget {
   final Icon icon;
   // This bool value decides if to show a dismiss button or not.
   final bool showDismiss;
+  // This bool forces the widget to show even if previously dismissed
+  final bool forceShow;
 
   HintCard({
     @required Key key,
@@ -21,6 +23,7 @@ class HintCard extends StatefulWidget {
       size: 48,
     ),
     this.showDismiss = true,
+    this.forceShow = false,
   })  : assert(key != null),
         super(key: key);
 
@@ -40,11 +43,17 @@ class _HintCardState extends State<HintCard> {
   void initState() {
     super.initState();
 
-    _shouldShow().then((result) {
+    if (widget.forceShow) {
       setState(() {
-        visible = result;
+        visible = true;
       });
-    });
+    } else {
+      _shouldShow().then((result) {
+        setState(() {
+          visible = result;
+        });
+      });
+    }
   }
 
   @override
@@ -114,10 +123,19 @@ class _HintCardState extends State<HintCard> {
 
   // Update visibility in case all hints were reset
   void _updateShow() async {
-    bool show = await _shouldShow();
-    if (visible != show)
+
+    if (widget.forceShow)
       setState(() {
-        visible = show;
+        visible = true;
       });
+    else {
+      bool show = await _shouldShow();
+
+      if (visible != show) {
+        setState(() {
+          visible = show;
+        });
+      }
+    }
   }
 }
