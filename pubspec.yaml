@@ -1,6 +1,6 @@
 name: hints
 description: A simple flutter widget for showing dismissible help texts to the user.
-version: 0.0.1
+version: 0.0.2
 author: Mattias Månsson <mattias.mansson@gmail.com>
 homepage: https://github.com/UglyBob79/hints
 
